@@ -1,7 +1,16 @@
-<nav id="footer-navigation" class="site-navigation footer-navigation" role="navigation">
-       <?php wp_nav_menu( array( 'theme_location' => 'footer', 'menu_class' => 'nav-menu', 'fallback_cb' => false ) ); ?>
-</nav>
+<div class="footer">
 
+  <div class="container">
+    <div class="row">
+      <div class="">
+        <nav id="footer-navigation" class="site-navigation footer-navigation" role="navigation">
+            <?php wp_nav_menu( array( 'theme_location' => 'footer', 'menu_class' => 'nav-menu', 'fallback_cb' => false ) ); ?>
+        </nav>
+      </div>
+    </div>
+  </div>
+
+  </div>
 <?php
 wp_footer();
 ?>

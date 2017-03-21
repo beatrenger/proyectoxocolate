@@ -8,5 +8,15 @@ jQuery(function($){
          windowH =window.innerHeight; // Getting window size;
 $(".topheader").css("height",windowH - 80);
         });
+
+
+        $('#myCarousel').carousel({
+        interval: false
+        });
 });
+
+
+
+
+
 });

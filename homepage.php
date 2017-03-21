@@ -29,5 +29,41 @@ get_template_part( 'menu-bar' ); ?>
        </div>
      </div>
 </div>
+<div class="container">
+<br>
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+
+
+  <div class="carousel-inner" role="listbox">
+    <!-- Indicators -->
+    <div class="col-xs-12 col-md-7 overflow_hidden product_cat_height itsabsolute">
+      <ol class="carousel-indicators">
+        <?php do_action('product_categories_count'); ?>
+      </ol>
+    </div>
+    <?php
+    do_action('product_categories_list');
+     ?>
+  </div>
+
+</div>
+</div>
+  <script type="text/javascript">
+  jQuery(function($){
+  $( document ).ready(function() {
+
+
+    $('#myCarousel').carousel({
+    interval: false
+    });
+});
+
+
+});
+
+
+  </script>
+
+
  </div>
-<?php get_footer(); ?>
+   <?php get_footer(); ?>

@@ -1,9 +1,16 @@
 
     <?php
       get_header();
+
+
+    woocommerce_content();
      ?>
- testing
 
 
 
-<?php get_footer(); ?>
+
+
+<?php
+
+  the_content ( get_the_ID () );
+get_footer(); ?>

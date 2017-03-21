@@ -88,8 +88,12 @@ $('.button-menu').on('click',function(){
   function menu_pos(){
     if ( $(window).scrollTop() > menu_bar_position){
           $('#menu-bar').addClass("f-nav");
+          $(".content-body").css("top", 80);
+            $(".footer").css("top", 80);
       } else {
           $('#menu-bar').removeClass("f-nav");
+            $(".content-body").css("top", 0)
+                $(".footer").css("top", 0)
       }
   }
 

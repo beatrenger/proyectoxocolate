@@ -37,6 +37,144 @@ html {
   display:block;
   overflow:visible;
 }
+
+.container-cats{
+
+
+.item-category{
+  position:relative;
+  display:block;
+  width:100%;
+  height:200px;
+  margin-bottom:20px;
+  border-radius: 5px;
+  .hover{
+    display:block;
+    position:absolute;
+    width:100%;
+    background-color:#231810;
+    height:100%;
+    -webkit-transition: .5s ease-in-out;
+    -moz-transition: .5s ease-in-out;
+    -o-transition: .5s ease-in-out;
+    transition: .5s ease-in-out;
+    border-radius:5px;
+     opacity: 0;
+      .circle{
+        position:relative;
+        display:block;
+        @extend .center;
+        height:150px;
+        width:150px;
+        border-radius: 50%;
+        background-color:#fcf3c0;
+        font-size:50px;
+        text-align: center;
+        span{
+          position: relative;
+          display: block;
+          color:#231810;
+          @extend .center-top;
+        }
+      }
+  }
+
+  .hover:hover{
+    opacity:.9 !important;
+  }
+  .category-title{
+    position: absolute;
+    display: block;
+    bottom:0;
+    width:100%;
+    padding:10px;
+    background-color:#ffde17;
+    font-weight:bold;
+    color: #000;
+      border-radius: 0 0 5px 5px;
+  }
+}
+}
+
+.productito{
+      list-style-type: none ;
+
+    
+          img{
+           position:relative;
+            display:block;
+            width:100%;
+            height:auto;
+          }
+
+
+
+
+}
+
+
+.image-product-category{
+    position: relative;
+    display: block;
+      width:100%;
+      height:300px;
+  div:first-child{
+    height:300px;
+
+    .image-product-title{
+      position: absolute;
+      display: block;
+      height:auto !important;
+      background-color:rgba(0, 0, 0, 0.8);
+      bottom:0;
+      right:15px;
+      color:white;
+      padding: 5px 40px;
+      font-size:40px;
+    }
+  }
+
+
+}
+
+.productito{
+  position: relative;
+  display: block;
+  overflow:hidden;
+  border-radius:40px;
+  a:link {
+    text-decoration: none;
+}
+
+a:visited {
+    text-decoration: none;
+}
+
+  .link-to-product{
+    position: relative;
+    display: block;
+    height: 100%;
+    width:100%;
+  .category-title{
+    position: absolute;
+    display:block;
+    padding:10px 20px;
+    width:100%;
+    bottom:0;
+    font-size:24px;
+    color:#3a281b !important;
+    font-weight: bold;
+    background-color: #ffde17;
+    text-align:center;
+  }
+
+  }
+}
+
+.body-products-conts{
+  margin-top:50px !important;
+  margin-bottom:50px !important;
+}
 @font-face {
     font-family: 'gadugi';
     src:   url('/wp-content/themes/proyectoxocolate/fonts/gadugi.ttf') format('truetype');
