@@ -1,5 +1,5 @@
 <?php
-
+// add_action('init','ajaxurl'); // add ajaxurl on top of header
 $max = 0;
 function proyectoxocolate_theme_setup() {
   register_nav_menus( array(
@@ -31,6 +31,12 @@ function proyectoxocolate_theme_setup() {
           wp_enqueue_style( 'style', get_stylesheet_uri() );
    wp_enqueue_script( 'javascript', get_template_directory_uri() . '/js/javascript.js', array(), '1.0.0', true );
       wp_enqueue_script( 'jquery' );
+
+
+      //Localize script data to be used in my-js.js
+   $scriptData = array();
+   $scriptData['ajaxurl'] = admin_url( 'admin-ajax.php' );
+   wp_localize_script( 'javascript', 'my_js_data', $scriptData );
   }
 
 function add_my_stylesheet() {
@@ -44,6 +50,7 @@ add_action( 'init', 'register_more_stylesheets' ); // should I use wp_print_styl
 // Woocomerce Functions
 add_action( 'product_categories_list', 'product_categories_list' );
 add_action( 'product_categories_count', 'number_category' );
+
 
 function number_category(){
     $all_categories = get_category_info();
@@ -132,3 +139,25 @@ function themeslug_enqueue_script() {
 wp_enqueue_script( 'add-to-cart-variation', get_bloginfo( 'url' ). '/wp-content/plugins/woocommerce/assets/js/frontend/add-to-cart-variation.js', false );
 }
 add_action( 'wp_enqueue_scripts', 'themeslug_enqueue_script' );
+
+
+
+add_action('wp_ajax_ajax_test', 'ajax_test');
+add_action('wp_ajax_nopriv_ajax_test', 'ajax_test');
+add_action('wp_ajax_ajax_call_test', 'ajax_call_test');
+add_action('wp_ajax_nopriv_ajax_call_test', 'ajax_call_test');
+
+
+
+
+
+
+function ajax_call_test() {
+   echo "this call actually worked";
+   die();
+}
+
+function ajax_test(){
+  echo "testing";
+  die();
+}

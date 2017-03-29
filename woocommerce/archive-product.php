@@ -100,21 +100,23 @@ background-size: cover;";  >
 			?>
 
 </div>
-			<?php woocommerce_product_loop_start(); ?>
-
-				<?php woocommerce_product_subcategories(); ?>
-
-				<?php while ( have_posts() ) : the_post();   ?>
-
-
-
-					<?php wc_get_template_part( 'content', 'product' ); ?>
-
-				<?php endwhile; // end of the loop. ?>
-
-			<?php woocommerce_product_loop_end(); ?>
-
 			<?php
+
+
+
+       woocommerce_product_loop_start();
+
+      woocommerce_product_subcategories();
+
+      while ( have_posts() ) : the_post();
+
+       wc_get_template_part( 'content', 'product' );
+
+      endwhile; // end of the loop.
+
+       woocommerce_product_loop_end();
+
+
 				/**
 				 * woocommerce_after_shop_loop hook.
 				 *

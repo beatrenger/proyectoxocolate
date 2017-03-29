@@ -2,6 +2,15 @@
 jQuery(function($) {
   var body = $("body");
   console.log('Loaded normal javascript file successfully');
+console.log("testing");
+
+
+// ajax call
+  $.post(my_js_data.ajaxurl, { action: 'ajax_call_test',  }, function(output) {
+  	 console.log(output)
+  });
+
+
 var   windowW =window.innerWidth;
 var menu_height =  $("#menu-bar").height();
 var menu_bar_position = window.innerHeight - $("#menu-bar").height(); // menu bar position
@@ -96,5 +105,7 @@ $('.button-menu').on('click',function(){
                 $(".footer").css("top", 0)
       }
   }
+
+
 
 });

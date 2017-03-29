@@ -32,14 +32,12 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 
 <li <?php post_class('productito'); ?>>
 	<a class="link-to-product" href="<?php the_permalink(); ?>">
+
+
 	<?php
-// var_dump( $product->add_to_cart_text());
-// 		 var_dump($product->get_regular_price());
-	do_action( 'woocommerce_before_shop_loop_item_title' );
 
 
-
-
+do_action( 'woocommerce_before_shop_loop_item_title' );
 
 	?>
 	<div class="category-title">
