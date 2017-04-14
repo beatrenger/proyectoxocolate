@@ -28,6 +28,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 
 $thumbnail_id = get_woocommerce_term_meta( get_queried_object()->term_id, 'thumbnail_id', true );
+$subcats = apply_filters( 'woocomerce_cat_byName',get_the_title($thumbnail_id)); // get info
 
 // // get the image URL
 $image = wp_get_attachment_url( $thumbnail_id );
@@ -96,7 +97,11 @@ background-size: cover;";  >
 				 * @hooked woocommerce_result_count - 20
 				 * @hooked woocommerce_catalog_ordering - 30
 				 */
-				do_action( 'woocommerce_before_shop_loop' );
+
+
+      if(!$subcats) {
+          do_action( 'woocommerce_before_shop_loop' );
+        }
 			?>
 
 </div>
@@ -104,41 +109,74 @@ background-size: cover;";  >
 
 
 
-       woocommerce_product_loop_start();
 
-      woocommerce_product_subcategories();
-
-      while ( have_posts() ) : the_post();
-
-       wc_get_template_part( 'content', 'product' );
-
-      endwhile; // end of the loop.
-
-       woocommerce_product_loop_end();
+ if($subcats){
 
 
-				/**
-				 * woocommerce_after_shop_loop hook.
-				 *
-				 * @hooked woocommerce_pagination - 10
-				 */
-				do_action( 'woocommerce_after_shop_loop' );
-			?>
 
+   echo '<ul class="products">';
+     foreach ($subcats as $sc) {
+
+       // get the thumbnail id using the queried category term_id
+        $thumbnail_id = get_woocommerce_term_meta($sc->term_id, 'thumbnail_id', true );
+      // get the image URL
+        $image = wp_get_attachment_url( $thumbnail_id );
+      // get link
+        $link = get_term_link( $sc->slug, $sc->taxonomy );
+?>
+       <li class="col-xs-12 col-sm-6 col-md-4 item-product">
+
+ <div <?php post_class('productito'); ?>>
+    <a class="link-to-product" href="<?php echo  $link; ?>">
+      <?php echo "<img src='{$image}' alt=''  />"; ?>
+      <div class="category-title">
+       	<?php echo $sc->name ?>
+      </div>
+    </a>
+</div>
+
+       </li>
+
+       <?php
+
+
+     }
+   echo '</ul>';
+ }else{
+
+// do_action( 'woocommerce_before_shop_loop' );
+
+   woocommerce_product_loop_start();
+
+  woocommerce_product_subcategories();
+
+  while ( have_posts() ) : the_post();
+
+   wc_get_template_part( 'content', 'product' );
+
+  endwhile; // end of the loop.
+
+   woocommerce_product_loop_end();
+
+
+    /**
+     * woocommerce_after_shop_loop hook.
+     *
+     * @hooked woocommerce_pagination - 10
+     */
+    do_action( 'woocommerce_after_shop_loop' );
+
+ }
+
+
+?>
 		<?php elseif ( ! woocommerce_product_subcategories( array( 'before' => woocommerce_product_loop_start( false ), 'after' => woocommerce_product_loop_end( false ) ) ) ) : ?>
 
 			<?php wc_get_template( 'loop/no-products-found.php' ); ?>
     </div>
 		<?php endif; ?>
 
-	<?php
-		/**
-		 * woocommerce_after_main_content hook.
-		 *
-		 * @hooked woocommerce_output_content_wrapper_end - 10 (outputs closing divs for the content)
-		 */
-		// do_action( 'woocommerce_after_main_content' );
-	?>
+
 </div>
 </div>
 <?php get_footer(); ?>

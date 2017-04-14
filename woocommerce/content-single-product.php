@@ -25,15 +25,32 @@ if ( ! defined( 'ABSPATH' ) ) {
 <div itemscope itemtype="<?php echo woocommerce_get_product_schema(); ?>" id="product-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 <?php
-    // global $product;
-		// echo the_ID();
+global $product;
+				  $attachment_ids = $product->get_gallery_attachment_ids(); //product gallery
+
+
+
 ?>
 <div class="row">
-		<div class="col-xs-12">
+		<div class="col-xs-12 col-md-8">
+			<div class="col-xs-12 col-md-4">
+				<?php
+				foreach( $attachment_ids as $attachment_id ){
+					?>
+					<img src="<?php echo $image_link = wp_get_attachment_url( $attachment_id );?>" class="img-thumbnail" alt="Cinque Terre" width="236" height="236">
 
+	<?php
+			 }
+				 ?>
+
+			</div>
+			<div class="col-xs-12 col-md-8">
+				<img src="http://lorempixel.com/200/200/sports/" alt="">
+
+			</div>
 		</div>
 </div>
-<img src="http://lorempixel.com/200/200/sports/" alt="">
+
 
 
 

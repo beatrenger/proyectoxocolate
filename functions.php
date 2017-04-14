@@ -17,6 +17,8 @@ function proyectoxocolate_theme_setup() {
          wp_register_style( 'homepage', get_stylesheet_directory_uri() . '/css/homepage.css' );
         wp_register_style('bar-css', get_template_directory_uri() . '/css/bar-css.css', array(), '1.0', 'all');
         wp_register_script( 'frontpage', get_template_directory_uri() . '/js/frontpage.js', array ( 'jquery' ), 1.1, true);
+        wp_register_script( 'jquerymobile', get_template_directory_uri() . '/js/jquery.mobile.custom.min.js', array ( 'jquery' ), 1.1, true);
+
 }
 
   function load_theme_styles() {
@@ -31,6 +33,7 @@ function proyectoxocolate_theme_setup() {
           wp_enqueue_style( 'style', get_stylesheet_uri() );
    wp_enqueue_script( 'javascript', get_template_directory_uri() . '/js/javascript.js', array(), '1.0.0', true );
       wp_enqueue_script( 'jquery' );
+      wp_enqueue_script('jquerymobile');
 
 
       //Localize script data to be used in my-js.js
@@ -50,6 +53,41 @@ add_action( 'init', 'register_more_stylesheets' ); // should I use wp_print_styl
 // Woocomerce Functions
 add_action( 'product_categories_list', 'product_categories_list' );
 add_action( 'product_categories_count', 'number_category' );
+add_filter('woocomerce_cat_byName','woocommerce_subcats_from_parentcat_by_NAME');
+
+
+function woocommerce_subcats_from_parentcat_by_NAME($parent_cat_NAME ) {
+  $IDbyNAME = get_term_by('name', $parent_cat_NAME, 'product_cat');
+  $product_cat_ID = $IDbyNAME->term_id;
+    $args = array(
+       'hierarchical' => 1,
+       'show_option_none' => '',
+       'hide_empty' => false,
+       'parent' => $product_cat_ID,
+       'taxonomy' => 'product_cat'
+    );
+
+get_categories($args);
+    $term = get_queried_object();
+
+    $children = get_terms( $term->taxonomy, array(
+    'parent'    => $term->term_id,
+    'hide_empty' => false
+    ) );
+
+    // var_dump($children);
+    // print_r($children); // uncomment to examine for debugging
+    if($children) { // get_terms will return false if tax does not exist or term wasn't found.
+      return $children;
+    }else{
+      return false;
+    }
+
+
+
+
+}
+
 
 
 function number_category(){

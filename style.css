@@ -142,5 +142,7 @@ html {
   src: url("/wp-content/themes/proyectoxocolate/fonts/gadugi.ttf") format("truetype");
   font-weight: normal;
   font-style: normal; }
+.products {
+  list-style-type: none; }
 
 /*# sourceMappingURL=style.css.map */

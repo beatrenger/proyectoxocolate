@@ -27,10 +27,10 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 	return;
 }
 ?>
-<div class="col-xs-12 col-sm-6 col-md-4 item-product">
+<li class="col-xs-12 col-sm-6 col-md-4 item-product">
 
 
-<li <?php post_class('productito'); ?>>
+<div <?php post_class('productito'); ?>>
 	<a class="link-to-product" href="<?php the_permalink(); ?>">
 
 
@@ -44,5 +44,5 @@ do_action( 'woocommerce_before_shop_loop_item_title' );
 	  <?php echo get_the_title()?>
 	</div>
 	</a>
-</li>
 </div>
+</li>
