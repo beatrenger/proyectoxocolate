@@ -106,6 +106,17 @@ $('.button-menu').on('click',function(){
       }
   }
 
+  // $('#myCarouselProduct').carousel({
+  // interval: false
+  // });
+
+
+  $("#myCarouselProduct").swiperight(function() {
+   $(this).carousel('prev');
+   });
+$("#myCarouselProduct").swipeleft(function() {
+   $(this).carousel('next');
+});
 
 
 });

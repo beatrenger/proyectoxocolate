@@ -175,3 +175,51 @@ a:visited {
 .products{
  list-style-type:none;
 }
+
+
+#myCarouselProduct{
+  .carousel-indicators{
+    display: block ;
+  position: relative !important;
+  width: 100% !important;
+  padding: 0 !important;
+  left: 0;
+  margin:0;
+  bottom:0;
+
+    li{
+      position: relative !important;
+      display: inline-block !important;
+      width:100%;
+      height:auto !important;
+      display: inline-block;
+    text-indent: 0;
+    cursor: pointer;
+    border: none;
+    }
+  }
+
+}
+
+
+@media screen and (max-width: 845px) {
+  #myCarouselProduct{
+  .carousel-indicators{
+    display:inline-block !important;
+    position: absolute;
+    background-color: #31281B;
+
+      li{
+        height:10px !important;
+        width:10px !important;
+        border: 1px solid white;
+
+        img{
+          display:none;
+        }
+      }
+    }
+
+  }
+
+}

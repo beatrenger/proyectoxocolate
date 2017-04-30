@@ -32,22 +32,49 @@ global $product;
 
 ?>
 <div class="row">
-		<div class="col-xs-12 col-md-8">
-			<div class="col-xs-12 col-md-4">
+		<div id="myCarouselProduct" class="col-xs-12 col-md-7 carousel slide" data-ride="carousel">
+
+			<div class="col-xs-12 col-sm-10 col-md-10 main-image">
+				<div class="carousel-inner" role="listbox">
+
 				<?php
+				$first_active= false;
 				foreach( $attachment_ids as $attachment_id ){
 					?>
-					<img src="<?php echo $image_link = wp_get_attachment_url( $attachment_id );?>" class="img-thumbnail" alt="Cinque Terre" width="236" height="236">
+						<div class="item <?php  echo ($first_active) ?: 'active'; $first_active = true; ?>">
+								<img   src="<?php echo $image_link = wp_get_attachment_url( $attachment_id );?>"   width="100%" height="auto">
+						</div>
+						<?php
+						 }
+							 ?>
+							 </div>
+				</div>
 
-	<?php
-			 }
-				 ?>
 
-			</div>
-			<div class="col-xs-12 col-md-8">
-				<img src="http://lorempixel.com/200/200/sports/" alt="">
 
-			</div>
+							<div class="col-xs-12 col-sm-2 col-md-2">
+
+								<ol class="carousel-indicators">
+
+								<?php
+								$value = 0;
+								foreach( $attachment_ids as $attachment_id ){
+									?>
+
+									 <li data-target="#myCarouselProduct" data-slide-to="<?php echo $value; ?>" class="<?php  echo ($first_active) ?: 'active'; $first_active = true; ?>">
+									<img src="<?php echo $image_link = wp_get_attachment_url( $attachment_id );?>" class="img-thumbnail" alt="Cinque Terre" width="90" height="90">
+									</li>
+
+					<?php
+					$value++;
+							 }
+								 ?>
+				 </ol>
+							</div>
+		</div>
+
+		<div class="col-xs-12 col-md-5">
+
 		</div>
 </div>
 

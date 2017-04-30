@@ -49,17 +49,7 @@ get_template_part( 'menu-bar' ); ?>
 </div>
 </div>
   <script type="text/javascript">
-  jQuery(function($){
-  $( document ).ready(function() {
-
-
-    $('#myCarousel').carousel({
-    interval: false
-    });
-});
-
-
-});
+  
 
 
   </script>
