@@ -111,12 +111,21 @@ $('.button-menu').on('click',function(){
   // });
 
 
-  $("#myCarouselProduct").swiperight(function() {
+$("#myCarouselProduct").swiperight(function() {
    $(this).carousel('prev');
    });
-$("#myCarouselProduct").swipeleft(function() {
+   $("#myCarouselProduct").swipeleft(function() {
    $(this).carousel('next');
 });
+
+
+  // spinner adder content-sungle-product.php
+  $('.spinner .boton:first-of-type').on('click', function() {
+    $('.spinner input').val( parseInt($('.spinner input').val(), 10) - 1);
+  });
+  $('.spinner .boton:last-of-type').on('click', function() {
+    $('.spinner input').val( parseInt($('.spinner input').val(), 10) + 1);
+  });
 
 
 });

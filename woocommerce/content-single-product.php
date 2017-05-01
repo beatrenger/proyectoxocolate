@@ -73,9 +73,25 @@ global $product;
 							</div>
 		</div>
 
-		<div class="col-xs-12 col-md-5">
+		<div id="product_info" class="col-xs-12 col-md-5">
+					<div class="precio">
+						<span> $<?php
+								 echo $product->get_price();
+							 ?></span>
+					</div>
 
+					<div class="input-group spinner">
+
+				 <div class="input-group-btn-vertical">
+					 <button class="boton" type="button"></button>
+					 <input type="text" class="form-control" value="0">
+			 
+					 <button class="boton" type="button"></button>
+
+				 </div>
+			 </div>
 		</div>
+
 </div>
 
 

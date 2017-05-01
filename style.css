@@ -160,8 +160,23 @@ html {
     height: auto !important;
     display: inline-block;
     text-indent: 0;
-    cursor: pointer;
-    border: none; }
+    border: none;
+    cursor: pointer; }
+
+#product_info .precio {
+  position: relative;
+  display: block;
+  font-size: 40px;
+  color: #594530; }
+#product_info .spinner {
+  width: 100px; }
+  #product_info .spinner input {
+    text-align: right; }
+#product_info .input-group-btn-vertical .boton {
+  position: relative;
+  display: inline-block;
+  height: 100%;
+  width: 20px; }
 
 @media screen and (max-width: 845px) {
   #myCarouselProduct .carousel-indicators {

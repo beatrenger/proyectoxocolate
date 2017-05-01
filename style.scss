@@ -199,7 +199,32 @@ a:visited {
     }
   }
 }
+#product_info{
 
+  .precio{
+    position: relative;
+    display:block;
+    font-size:40px;
+    color:#594530;
+  }
+
+  .spinner {
+  width: 100px;
+  input {
+    text-align: right;
+  }
+}
+
+.input-group-btn-vertical {
+      .boton{
+        position: relative;
+        display:inline-block;
+        height:100%;
+        width:20px;
+      }
+
+}
+}
 
 @media screen and (max-width: 845px) {
   #myCarouselProduct{
@@ -218,7 +243,5 @@ a:visited {
         }
       }
     }
-
   }
-
 }
