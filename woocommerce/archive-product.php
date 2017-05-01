@@ -20,11 +20,9 @@
   get_header();
 	get_template_part( 'menu-bar' );
 
-if ( ! defined( 'ABSPATH' ) ) {
-	exit; // Exit if accessed directly
-}
-
-
+  if ( ! defined( 'ABSPATH' ) ) {
+  	exit; // Exit if accessed directly
+  }
 
 
 $thumbnail_id = get_woocommerce_term_meta( get_queried_object()->term_id, 'thumbnail_id', true );
