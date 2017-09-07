@@ -2,7 +2,6 @@
 jQuery(function($) {
   var body = $("body");
   console.log('Loaded normal javascript file successfully');
-console.log("testing");
 
 
 // ajax call
@@ -117,6 +116,16 @@ $('.button-menu').on('click',function(){
 $("#myCarouselProduct").swipeleft(function() {
    $(this).carousel('next');
 });
+
+
+window.onload = function(){
+
+  // $( '.loading-page').fadeOut( "slow", function() {
+  //   $('.loading-page').addClass('hidden');
+  //  });
+
+
+};
 
 
 });

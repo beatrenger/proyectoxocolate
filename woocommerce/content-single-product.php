@@ -74,7 +74,7 @@ global $product;
 		</div>
 
 		<div class="col-xs-12 col-md-5">
-
+lololol
 		</div>
 </div>
 
