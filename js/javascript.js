@@ -2,7 +2,6 @@
 jQuery(function($) {
   var body = $("body");
   console.log('Loaded normal javascript file successfully');
-console.log("testing");
 
 
 // ajax call
@@ -119,13 +118,14 @@ $("#myCarouselProduct").swiperight(function() {
 });
 
 
-  // spinner adder content-sungle-product.php
-  $('.spinner .boton:first-of-type').on('click', function() {
-    $('.spinner input').val( parseInt($('.spinner input').val(), 10) - 1);
-  });
-  $('.spinner .boton:last-of-type').on('click', function() {
-    $('.spinner input').val( parseInt($('.spinner input').val(), 10) + 1);
-  });
+window.onload = function(){
+
+  $( '.loading-page').fadeOut( "slow", function() {
+    $('.loading-page').addClass('hidden');
+   });
+
+
+};
 
 
 });

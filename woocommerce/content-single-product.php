@@ -73,6 +73,7 @@ global $product;
 							</div>
 		</div>
 
+<<<<<<< HEAD
 		<div id="product_info" class="col-xs-12 col-md-5">
 					<div class="precio">
 						<span> $<?php
@@ -90,6 +91,10 @@ global $product;
 
 				 </div>
 			 </div>
+=======
+		<div class="col-xs-12 col-md-5">
+lololol
+>>>>>>> 8fccfea0a042f9021d79e4050a3aec1d3a881731
 		</div>
 
 </div>

@@ -19,7 +19,7 @@ html {
   -moz-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%); }
 
-.center-top, .container-cats .item-category .hover .circle span {
+.center-top, .container-cats .item-category .hover .circle span, .dots {
   top: 50%;
   -webkit-transform: translate(0, -50%);
   -moz-transform: translate(0, -50%);
@@ -189,5 +189,35 @@ html {
       border: 1px solid white; }
       #myCarouselProduct .carousel-indicators li img {
         display: none; } }
+.loading-page {
+  position: fixed;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  z-index: 100; }
+
+.hidden {
+  display: none !important; }
+
+.dots {
+  position: relative;
+  background-color: yellow;
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+  -webkit-animation: fadeinout 1s linear infinite;
+  animation: fadeinout 1s linear infinite; }
+
+@-webkit-keyframes fadeinout {
+  0%,100% {
+    opacity: 0; }
+  50% {
+    opacity: 1; } }
+@keyframes fadeinout {
+  0%,100% {
+    opacity: 0; }
+  50% {
+    opacity: 1; } }
 
 /*# sourceMappingURL=style.css.map */
