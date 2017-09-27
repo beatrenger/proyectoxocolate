@@ -2,7 +2,7 @@
 <div id="menu-bar">
   <div class="container">
     <div class="row">
-      <div class="col-xs-12 icons-position">
+      <di v class="col-xs-12 icons-position">
           <div id="nav-icon3">
               <span></span>
               <span></span>
