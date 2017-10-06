@@ -5,7 +5,7 @@
 
 
 
- <div class=""  style="">
+ 
   <div class="topheader">
     <div class="container">
       <div>
@@ -60,5 +60,5 @@
 
 
    </div>
- </div>
+
    <?php get_footer(); ?>

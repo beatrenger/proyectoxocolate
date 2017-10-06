@@ -1,6 +1,4 @@
 jQuery(function($){
-      $( document ).ready(function() {
-        console.log('Loaded Front Page js file successfully ');
         var   windowH =window.innerHeight; // Getting window size;
         $(".topheader").css("height",windowH - 80);
 
@@ -21,5 +19,5 @@ $(".topheader").css("height",windowH - 80);
       $("#myCarousel").swipeleft(function() {
          $(this).carousel('next');
     });
-  });
+
 });
