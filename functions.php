@@ -115,27 +115,8 @@ $image = wp_get_attachment_url( $thumbnail_id );
          <div class="item <?php  echo ($first_active) ?: 'active'; $first_active = true; ?>">
 
 
-           <div class="col-xs-12 col-md-7 overflow_hidden product_cat_height " style="background-image: url(<?php echo $image?>); background-repeat: no-repeat; background-position: center;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;";  >
 
-
-             <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-               <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-               <span class="sr-only">Previous</span>
-             </a>
-             <?php
-             // print the IMG HTML
-              // echo "<img src='{$image}' alt='' width='762' height='365' />";
-              ?>
-             <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-               <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-               <span class="sr-only">Next</span>
-             </a>
-          </div>
-          <div class="col-xs-12 col-md-5 overflow_hidden product_descrip_height descripcion">
+          <div class="overflow_hidden product_descrip_height descripcion">
                 <span class="titulo">
                   <?php   echo $cat->name;
                    ?>
