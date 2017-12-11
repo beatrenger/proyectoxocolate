@@ -55,8 +55,8 @@
 .content-body {
   position: relative;
   display: block;
-  padding-top: 40px;
-  width: 100%; }
+  width: 100%;
+  background-color: blue; }
   .content-body .titulo {
     position: relative;
     display: block;
