@@ -9,7 +9,11 @@
   <div class="topheader">
     <div class="container">
       <div>
-        <img  src="<?php bloginfo('template_url'); ?>/images/logofrontpage.png" alt="">
+        <?php
+            $imagelogo = get_field('logo_tipo');
+                    if( !empty($imagelogo) ): ?>
+                  <img src="<?php echo $imagelogo['url']; ?>"  />
+                    <?php endif; ?>
       </div>
       <div class="button-menu">
         <img src="<?php bloginfo('template_url'); ?>/images/flecha-scroll-down.png" alt="">
@@ -24,14 +28,23 @@
 
 <div class="grid">
   <div class="content_product">
-      <!-- <div class="prdct_image"> -->
-         <img src="https://lorempixel.com/612/612/" alt="">
-      <!-- </div> -->
+    <?php
+        $product_image = get_field('product_image');
+                if( !empty($product_image) ): ?>
+                  <div class="prdct_image">
+              <img src="<?php echo $product_image['url']; ?>"  />
+                </div>
+                <?php endif; ?>
+
   </div>
   <div class="content_product">
-      <!-- <div class="prdct_image"> -->
-         <img src="https://lorempixel.com/612/612/" alt="">
-      <!-- </div> -->
+    <?php
+        $product_image2 = get_field('product_image2');
+                if( !empty($product_image2) ): ?>
+                  <div class="prdct_image">
+              <img src="<?php echo $product_image2['url']; ?>"  />
+                </div>
+                <?php endif; ?>
   </div>
 </div>
 
