@@ -7,17 +7,8 @@ jQuery(function($){
 $(".topheader").css("height",windowH - 80);
         });
 
-
-        $('#myCarousel').carousel({
-        interval: false
+        $('.grid').masonry({
+          itemSelector: '.content_product'
         });
-
-
-        $("#myCarousel").swiperight(function() {
-         $(this).carousel('prev');
-         });
-      $("#myCarousel").swipeleft(function() {
-         $(this).carousel('next');
-    });
 
 });

@@ -22,22 +22,22 @@ function proyectoxocolate_theme_setup() {
 }
 
   function load_theme_styles() {
-    if (is_home() || is_front_page() ){
-              wp_enqueue_style( 'homepage' );  // no brackets needed for one line and no else
-              wp_enqueue_script( 'frontpage' );
-    }
 
     wp_enqueue_script( 'javascript', get_template_directory_uri() . '/js/javascript.js', array(), '1.0.0', true );
     wp_enqueue_style( 'bar-css', get_stylesheet_uri() );
     wp_enqueue_style( 'style', get_stylesheet_uri() );
     wp_enqueue_script( 'jquery' );
     wp_enqueue_script('jquerymobile');
-
-
+    wp_enqueue_script( 'masonry', get_template_directory_uri() . '/js/masonry.js', array(), '1.0.0', true );
       //Localize script data to be used in my-js.js
    $scriptData = array();
    $scriptData['ajaxurl'] = admin_url( 'admin-ajax.php' );
    wp_localize_script( 'javascript', 'my_js_data', $scriptData );
+
+   if (is_home() || is_front_page() ){
+             wp_enqueue_style( 'homepage' );  // no brackets needed for one line and no else
+             wp_enqueue_script( 'frontpage' );
+   }
   }
 
 function add_my_stylesheet() {
@@ -88,55 +88,13 @@ get_categories($args);
 
 
 
-function number_category(){
-    $all_categories = get_category_info();
-    $max = sizeof($all_categories);
-    $first_active= false;
-    for($i = 0; $i <$max; ++$i){
-      ?>
-      <li data-target="#myCarousel" data-slide-to="<?php echo $i; ?>" class="<?php  echo ($first_active) ?: 'active'; $first_active = true; ?>"></li>
-<?php
-    }
-}
+
 
 function product_categories_list() {
 
 $all_categories = get_category_info();
 // $max = sizeof($all_categories);
-$first_active= false;
-foreach ($all_categories as $cat) {
-   if($cat->category_parent == 0) {
-     $category_id = $cat->term_id;
-     // get the thumbnail id using the queried category term_id
-$thumbnail_id = get_woocommerce_term_meta( $cat->term_id, 'thumbnail_id', true );
-// get the image URL
-$image = wp_get_attachment_url( $thumbnail_id );
-  ?>
-         <div class="item <?php  echo ($first_active) ?: 'active'; $first_active = true; ?>">
-
-
-
-          <div class="overflow_hidden product_descrip_height descripcion">
-                <span class="titulo">
-                  <?php   echo $cat->name;
-                   ?>
-                </span>
-
-                <div class="contenido">
-                      <?php   echo $cat->category_description;
-                       ?>
-                </div>
-                <div class="categoria_link">
-
-                   <a href="<?php  echo get_term_link($cat->slug, 'product_cat'); ?>">
-                        ¡ver mas del producto!    <span class="glyphicon glyphicon-shopping-cart"></span>
-                  </a>
-                </div>
-          </div>
-     </div>
-     <?php
-   }
-}
+  return $all_categories;
 }
 
 function get_category_info(){
