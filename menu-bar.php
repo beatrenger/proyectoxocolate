@@ -10,7 +10,7 @@
               <span></span>
           </div>
       <a id="logo-bara" href='<?php echo get_site_url(); ?>'> <img  src="<?php bloginfo('template_url'); ?>/images/logo-bara.png" alt=""></a>
-        <img id="logo-cart" src="<?php bloginfo('template_url'); ?>/images/cart.png" alt="">
+        <!-- <img id="logo-cart" src="<?php bloginfo('template_url'); ?>/images/cart.png" alt=""> -->
 
 
         <?php
