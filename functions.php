@@ -17,18 +17,19 @@ function proyectoxocolate_theme_setup() {
          wp_register_style( 'homepage', get_stylesheet_directory_uri() . '/css/homepage.css' );
         wp_register_style('bar-css', get_template_directory_uri() . '/css/bar-css.css', array(), '1.0', 'all');
         wp_register_script( 'frontpage', get_template_directory_uri() . '/js/frontpage.js', array ( 'jquery' ), 1.1, true);
-        wp_register_script( 'jquerymobile', get_template_directory_uri() . '/js/jquery.mobile.custom.min.js', array ( 'jquery' ), 1.1, true);
-
+        wp_register_script( 'menu-bar', get_template_directory_uri() . '/js/menu-bar.js', array ( 'jquery' ), 1.1, true);
+         wp_register_script( 'jquerymobile', get_template_directory_uri() . '/js/jquery.mobile.custom.min.js', array ( 'jquery' ), 1.1, true);
 }
 
   function load_theme_styles() {
 
-    wp_enqueue_script( 'javascript', get_template_directory_uri() . '/js/javascript.js', array(), '1.0.0', true );
+     wp_enqueue_script( 'javascript', get_template_directory_uri() . '/js/javascript.js', array(), '1.0.0', true );
     wp_enqueue_style( 'bar-css', get_stylesheet_uri() );
     wp_enqueue_style( 'style', get_stylesheet_uri() );
-    wp_enqueue_script( 'jquery' );
-    wp_enqueue_script('jquerymobile');
-    wp_enqueue_script( 'masonry', get_template_directory_uri() . '/js/masonry.js', array(), '1.0.0', true );
+     wp_enqueue_script( 'jquery' );
+     wp_enqueue_script('jquerymobile');
+      wp_enqueue_script( 'menu-bar');
+     wp_enqueue_script( 'masonry', get_template_directory_uri() . '/js/masonry.js', array(), '1.0.0', true );
       //Localize script data to be used in my-js.js
    $scriptData = array();
    $scriptData['ajaxurl'] = admin_url( 'admin-ajax.php' );
@@ -36,7 +37,7 @@ function proyectoxocolate_theme_setup() {
 
    if (is_home() || is_front_page() ){
              wp_enqueue_style( 'homepage' );  // no brackets needed for one line and no else
-             wp_enqueue_script( 'frontpage' );
+              wp_enqueue_script( 'frontpage' );
    }
   }
 
@@ -45,7 +46,7 @@ function add_my_stylesheet() {
     wp_enqueue_style( 'stylesheet_name' );  // no brackets needed for one line and no else
 }
 add_action( 'init', 'register_more_stylesheets' ); // should I use wp_print_styles hook instead?
-  add_action('wp_enqueue_scripts', 'load_theme_styles');
+add_action('wp_enqueue_scripts', 'load_theme_styles');
 
 
 // Woocomerce Functions
@@ -113,7 +114,7 @@ return get_categories( $args );
 function themeslug_enqueue_script() {
 wp_enqueue_script( 'add-to-cart-variation', get_bloginfo( 'url' ). '/wp-content/plugins/woocommerce/assets/js/frontend/add-to-cart-variation.js', false );
 }
-add_action( 'wp_enqueue_scripts', 'themeslug_enqueue_script' );
+ add_action( 'wp_enqueue_scripts', 'themeslug_enqueue_script' );
 
 
 

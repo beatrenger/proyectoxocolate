@@ -5,6 +5,17 @@
     <title>Proyecto Xocolate</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+
+    <?php
+
+    wp_head();
+    /*
+      Header information:
+            Nav bar
+            Nav Info
+            Nav ETC
+    */
+    ?>
   </head>
   <body>
 
@@ -13,16 +24,3 @@
 
         </div>
     </div>
-<div id="themebody">
-
-
-<?php
-
-wp_head();
-/*
-  Header information:
-        Nav bar
-        Nav Info
-        Nav ETC
-*/
-?>

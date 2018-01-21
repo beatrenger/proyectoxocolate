@@ -7,17 +7,30 @@
 
 
   <div class="topheader">
+    <?php
+$image_bg = get_field('theme_home_page_background_image');
+     ?>
+     <!-- Top Background images -->
+     <div class="background-image">
+       <div> </div>
+          <img src=<?php echo '"'.$image_bg['url'].'"' ?> alt="">
+     </div>
+
     <div class="container">
       <div>
         <?php
             $imagelogo = get_field('logo_tipo');
                     if( !empty($imagelogo) ): ?>
-                  <img src="<?php echo $imagelogo['url']; ?>"  />
+                  <img class="logo_header" src="<?php echo $imagelogo['url']; ?>"  />
                     <?php endif; ?>
       </div>
       <div class="button-menu">
-        <img src="<?php bloginfo('template_url'); ?>/images/flecha-scroll-down.png" alt="">
-        </div>
+        <svg id="more-arrows">
+              <polygon class="arrow-top" points="37.6,27.9 1.8,1.3 3.3,0 37.6,25.3 71.9,0 73.7,1.3 "></polygon>
+              <polygon class="arrow-middle" points="37.6,45.8 0.8,18.7 4.4,16.4 37.6,41.2 71.2,16.4 74.5,18.7 "></polygon>
+              <polygon class="arrow-bottom" points="37.6,64 0,36.1 5.1,32.8 37.6,56.8 70.4,32.8 75.5,36.1 "></polygon>
+            </svg>
+          </div>
 
     </div>
   </div>

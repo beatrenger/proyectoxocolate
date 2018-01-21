@@ -2,7 +2,7 @@
 <div id="menu-bar">
   <div class="container">
     <div class="row">
-      <di v class="col-xs-12 icons-position">
+      <di  class="col-xs-12 icons-position">
           <div id="nav-icon3">
               <span></span>
               <span></span>
@@ -18,6 +18,8 @@
             'theme_location' => 'header'
         ));
             ?>
+          </div>
       </div>
     </div>
+</div>
 </div>

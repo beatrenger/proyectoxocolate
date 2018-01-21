@@ -11,4 +11,12 @@ $(".topheader").css("height",windowH - 80);
           itemSelector: '.content_product'
         });
 
+
+        // button controler from top header
+        $('.button-menu').on('click',function(){
+        console.log('pressed arrow to animate menu');
+        event.preventDefault()
+        $('html,body').animate({scrollTop: $('#menu-bar').offset().top }, 1000);
+        });
+
 });
