@@ -43,7 +43,6 @@
    display:block;
    width:100%;
    z-index: 0;
-
      .background-image{
        position: absolute;
        display: block;
@@ -64,8 +63,8 @@
        img{
          position: relative;
          display: block;
-         width:auto;
-         height:height;
+         width:100%;
+         object-fit: cover;
          @extend .center;
 
        }
@@ -87,7 +86,7 @@
         width:100%;
         @extend .center-left;
         img{
-          width:100%;
+          width:300px;
           height: auto;
         }
       }
@@ -155,7 +154,7 @@ z-index: 1;
      width:50%;
      height:500px;
      overflow:hidden;
-    background-color:grey
+     background-color:grey;
    }
  }
 

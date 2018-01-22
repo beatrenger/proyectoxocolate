@@ -55,8 +55,8 @@
     .topheader .background-image img {
       position: relative;
       display: block;
-      width: auto;
-      height: height; }
+      width: 100%;
+      object-fit: cover; }
   .topheader .container {
     text-align: center;
     position: relative;
@@ -68,7 +68,7 @@
       max-width: 600px;
       width: 100%; }
       .topheader .container div:first-child img {
-        width: 100%;
+        width: 300px;
         height: auto; }
     .topheader .container div:last-child {
       position: relative;

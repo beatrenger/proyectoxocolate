@@ -12,7 +12,8 @@ $image_bg = get_field('theme_home_page_background_image');
      ?>
      <!-- Top Background images -->
      <div class="background-image">
-       <div> </div>
+        <!--  dark_cover -->
+       <div></div>
           <img src=<?php echo '"'.$image_bg['url'].'"' ?> alt="">
      </div>
 
