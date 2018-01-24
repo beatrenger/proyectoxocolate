@@ -55,7 +55,6 @@
     .topheader .background-image img {
       position: relative;
       display: block;
-      width: 100%;
       object-fit: cover; }
   .topheader .container {
     text-align: center;

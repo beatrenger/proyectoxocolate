@@ -20,9 +20,10 @@ $color_black_approx: #070504;
 	display: block;
 	width: 100%;
 	font-size: 18px;
+	overflow:hidden;
 	height: 80px;
+	z-index:3;
 	background-color: $color_school_bus_yellow_approx;
-	overflow: hidden;
 	#logo-bara {
 		top: 50%;
 		transform: translate(0, -50%);
@@ -40,6 +41,7 @@ $color_black_approx: #070504;
 	}
 	.icons-position {
 		height: 80px;
+		padding:0 !important;
 	}
 	#nav-icon3 {
 		width: 60px;
@@ -112,21 +114,37 @@ $color_black_approx: #070504;
 		text-align: center;
 		margin: 0;
 		padding: 0;
-		transition: .15s ease-in-out;
 		li {
 			position: relative;
 			display: inline-block;
-			padding: 29px 10px;
-			transition: .5s ease-in-out;
-			&:hover {
-				background-color: $color_egg_white_approx;
-				text-decoration: none;
-				font-size: 20px;
+			vertical-align:top;
+			a{
+			.link_text{
+				padding: 27px 10px;
+				&:hover {
+					background-color: $color_egg_white_approx;
+					text-decoration: none;
+				}
 			}
+			}
+
+			.link_text:hover + ul{
+					display: block;
+			}
+			ul {
+				display: none;
+				position: absolute;
+				 list-style:none;
+				 left:0;
+				  top:80px !important;
+				  padding:0;
+					margin:0;
+				 }
+
 		}
 	}
 	div:last-child {
-		min-height: 80px;
+		height: 80px;
 	}
 }
 .center-left {

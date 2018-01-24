@@ -15,11 +15,14 @@
 
         <?php
            wp_nav_menu( array(
-            'theme_location' => 'header'
+            'theme_location' => 'header',
+            'link_before' => '<div class="link_text">' ,
+            'link_after' => '</div>'
         ));
             ?>
           </div>
       </div>
     </div>
-</div>
-</div>
+    <div class="the_cart">
+
+    </div>
