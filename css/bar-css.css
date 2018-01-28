@@ -119,7 +119,21 @@
 .noselect {
   user-select: none; }
 
+.the_cart {
+  position: absolute;
+  display: block;
+  right: 30px;
+  background-color: black;
+  height: 50px;
+  width: 200px;
+  z-index: 99999; }
+
 @media only screen and (max-width: 800px) {
+  .the_cart {
+    position: relative;
+    width: 100%;
+    right: 0; }
+
   @-webkit-keyframes fadeinout {
     0% {
       opacity: 0; }

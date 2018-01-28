@@ -45,9 +45,9 @@ $image_bg = get_field('theme_home_page_background_image');
     <?php
         $product_image = get_field('product_image');
                 if( !empty($product_image) ): ?>
-                  <div class="prdct_image">
+
               <img src="<?php echo $product_image['url']; ?>"  />
-                </div>
+
                 <?php endif; ?>
 
   </div>
@@ -55,53 +55,51 @@ $image_bg = get_field('theme_home_page_background_image');
     <?php
         $product_image2 = get_field('product_image2');
                 if( !empty($product_image2) ): ?>
-                  <div class="prdct_image">
               <img src="<?php echo $product_image2['url']; ?>"  />
-                </div>
                 <?php endif; ?>
   </div>
 </div>
+<?php
+
+// check if the repeater field has rows of data
+if( have_rows('categories_repeater') ):
+
+ 	// loop through the rows of data
+    while ( have_rows('categories_repeater') ) : the_row();
+
+          // vars
+          $image = get_sub_field('rep_image');
+          $content = get_sub_field('rep_description');
+          $title = get_sub_field('rep_title');
+
+        ?>
+
+                <div class="content_category">
+                    <img class="content_cat_backimg" src="<?php echo $image['url']; ?>" alt="">
+                  <div class="text_info">
+                    <div class="title">
+                    <span><?php echo $title; ?></span>
+                    </div>
+                    <div class="description">
+                    <?php echo $content; ?>
+                    </div>
+                  </div>
+                </div>
+        <?php
+
+    endwhile;
+
+else :
+
+    echo "no tiene nada";
+
+endif;
+
+?>
 
 
-      <div class="content_category">
-        <div class="prdct_cat">
-          <img src="" alt="">
-        </div>
-        <div class="text_info">
-          <div class="title">
-            Content Title Mother Fuckers
-          </div>
-          <div class="description">
-            Content Mother Fuckers Content Mother Fuckers
-          </div>
-        </div>
-      </div>
-      <div class="content_category">
-        <div class="prdct_cat">
-          <img src="" alt="">
-        </div>
-        <div class="text_info">
-          <div class="title">
-            Content Title Mother Fuckers
-          </div>
-          <div class="description">
-            Content Mother Fuckers Content Mother Fuckers
-          </div>
-        </div>
-      </div>
-      <div class="content_category">
-        <div class="prdct_cat">
-          <img src="" alt="">
-        </div>
-        <div class="text_info">
-          <div class="title">
-            Content Title Mother Fuckers
-          </div>
-          <div class="description">
-            Content Mother Fuckers Content Mother Fuckers
-          </div>
-        </div>
-      </div>
+
+
 
    </div>
 

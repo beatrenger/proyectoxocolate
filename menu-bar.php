@@ -10,7 +10,6 @@
               <span></span>
           </div>
       <a id="logo-bara" href='<?php echo get_site_url(); ?>'> <img  src="<?php bloginfo('template_url'); ?>/images/logo-bara.png" alt=""></a>
-        <!-- <img id="logo-cart" src="<?php bloginfo('template_url'); ?>/images/cart.png" alt=""> -->
 
 
         <?php
@@ -24,5 +23,8 @@
       </div>
     </div>
     <div class="the_cart">
-
+      <img id="logo-cart" src="<?php bloginfo('template_url'); ?>/images/cart.png" alt="">
+        <div class="count_product">
+           <span>52</span>
+        </div>
     </div>

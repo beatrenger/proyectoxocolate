@@ -9,7 +9,6 @@ console.log('Loaded menu bar successfully');
 var   windowW =window.innerWidth;
 var menu_height =  $("#menu-bar").height();
 var menu_bar_position = window.innerHeight - $("#menu-bar").height(); // menu bar position
-console.log(menu_bar_position);
 menuresponsive(); // sets menu height;
  // SnowFlakes
 // var scene = document.getElementById('scene');
@@ -35,7 +34,7 @@ $( window ).resize(function(e) {
   windowW =window.innerWidth;
   menu_bar_position = $('.topheader').height();
     menuresponsive();
-    menu_pos();
+  //  menu_pos();
     console.log(menu_bar_position);
 });
 function menuoption(){
@@ -81,18 +80,18 @@ if(windowW <= 800 ){
 
 
  $(window).on('scroll', function(){
-        menu_pos();
+    //    menu_pos();
   });
 
 function menu_pos(){
   if ( $(window).scrollTop() > menu_bar_position){
-        $('#menu-bar').addClass("f-nav");
-        $(".content-body").css("top", 80);
-          $(".footer").css("top", 80);
+      //  $('#menu-bar').addClass("f-nav");
+        // $(".content-body").css("top", 80);
+        //   $(".footer").css("top", 80);
     } else {
-        $('#menu-bar').removeClass("f-nav");
-          $(".content-body").css("top", 0)
-              $(".footer").css("top", 0)
+      //  $('#menu-bar').removeClass("f-nav");
+        // $(".content-body").css("top", 0)
+        // $(".footer").css("top", 0)
     }
 }
 
