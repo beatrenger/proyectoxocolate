@@ -32,7 +32,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 
     <div class="row">
 
-
 <?php
 
   $all_categories = get_category_info();

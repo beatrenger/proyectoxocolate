@@ -73,7 +73,6 @@ global $product;
 							</div>
 		</div>
 
-<<<<<<< HEAD
 		<div id="product_info" class="col-xs-12 col-md-5">
 					<div class="precio">
 						<span> $<?php
@@ -81,20 +80,14 @@ global $product;
 							 ?></span>
 					</div>
 
-					<div class="input-group spinner">
+  <div class="input-group-carrito spinner-carrito">
+			<button class="btn btn-brown" type="button"><i class="fa fa-caret-down"></i></button>
+			<input type="text" class="form-control" value="0">
+      <button class="btn btn-brown" type="button"><i class="fa fa-caret-up"></i></button>
 
-				 <div class="input-group-btn-vertical">
-					 <button class="boton" type="button"></button>
-					 <input type="text" class="form-control" value="0">
-			 
-					 <button class="boton" type="button"></button>
-
-				 </div>
-			 </div>
-=======
+    </div>
+  </div>
 		<div class="col-xs-12 col-md-5">
-lololol
->>>>>>> 8fccfea0a042f9021d79e4050a3aec1d3a881731
 		</div>
 
 </div>
