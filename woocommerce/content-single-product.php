@@ -31,68 +31,80 @@ global $product;
 
 
 ?>
-<div class="row">
-		<div id="myCarouselProduct" class="col-xs-12 col-md-7 carousel slide" data-ride="carousel">
+<div class="container">
 
-			<div class="col-xs-12 col-sm-10 col-md-10 main-image">
-				<div class="carousel-inner" role="listbox">
+	<div class="row">
+			<div id="myCarouselProduct" class="col-xs-12 col-md-7 carousel slide" data-ride="carousel">
 
-				<?php
-				$first_active= false;
-				foreach( $attachment_ids as $attachment_id ){
-					?>
-						<div class="item <?php  echo ($first_active) ?: 'active'; $first_active = true; ?>">
-								<img   src="<?php echo $image_link = wp_get_attachment_url( $attachment_id );?>"   width="100%" height="auto">
-						</div>
-						<?php
-						 }
-							 ?>
-							 </div>
-				</div>
-
-
-
-							<div class="col-xs-12 col-sm-2 col-md-2">
-
-								<ol class="carousel-indicators">
-
-								<?php
-								$value = 0;
-								foreach( $attachment_ids as $attachment_id ){
-									?>
-
-									 <li data-target="#myCarouselProduct" data-slide-to="<?php echo $value; ?>" class="<?php  echo ($first_active) ?: 'active'; $first_active = true; ?>">
-									<img src="<?php echo $image_link = wp_get_attachment_url( $attachment_id );?>" class="img-thumbnail" alt="Cinque Terre" width="90" height="90">
-									</li>
+				<div class="col-xs-12 col-sm-10 col-md-10 main-image">
+					<div class="carousel-inner" role="listbox">
 
 					<?php
-					$value++;
+					$first_active= false;
+					foreach( $attachment_ids as $attachment_id ){
+						?>
+							<div class="item <?php  echo ($first_active) ?: 'active'; $first_active = true; ?>">
+									<img   src="<?php echo $image_link = wp_get_attachment_url( $attachment_id );?>"   width="100%" height="auto">
+							</div>
+							<?php
 							 }
 								 ?>
-				 </ol>
-							</div>
-		</div>
-
-		<div id="product_info" class="col-xs-12 col-md-5">
-					<div class="precio">
-						<span> $<?php
-								 echo $product->get_price();
-							 ?></span>
+								 </div>
 					</div>
 
-  <div class="input-group-carrito spinner-carrito">
-			<button class="btn btn-brown" type="button"><i class="fa fa-caret-down"></i></button>
-			<input type="text" class="form-control" value="0">
-      <button class="btn btn-brown" type="button"><i class="fa fa-caret-up"></i></button>
 
-    </div>
-  </div>
-		<div class="col-xs-12 col-md-5">
-		</div>
 
+								<div class="col-xs-12 col-sm-2 col-md-2">
+
+									<ol class="carousel-indicators">
+
+									<?php
+									$value = 0;
+									foreach( $attachment_ids as $attachment_id ){
+										?>
+
+										 <li data-target="#myCarouselProduct" data-slide-to="<?php echo $value; ?>" class="<?php  echo ($first_active) ?: 'active'; $first_active = true; ?>">
+										<img src="<?php echo $image_link = wp_get_attachment_url( $attachment_id );?>" class="img-thumbnail" alt="Cinque Terre" width="90" height="90">
+										</li>
+
+						<?php
+						$value++;
+								 }
+									 ?>
+					 </ol>
+								</div>
+			</div>
+
+			<div id="product_info" class="col-xs-12 col-md-5">
+						<div class="precio">
+							<span> $<?php
+									 echo $product->get_price();
+								 ?></span>
+						</div>
+<div class="col-xs-12">
+	<div id="cantidad" class="col-xs-6">
+		<span>Cantidad</span>
+	</div>
+	<div class="col-xs-6">
+		<div class="input-group-carrito spinner-carrito">
+				<button class="btn btn-brown" type="button"><b>-</b></button>
+				<input type="text" class="form-control" value="0">
+	      <button class="btn btn-brown" type="button"><b>+</b></button>
+
+	    </div>
+	</div>
 </div>
 
 
+	  </div>
+			<div class="col-xs-12 col-md-5">
+			</div>
+
+	</div>
 
 
-</div><!-- #product-<?php the_ID(); ?> -->
+
+
+	</div><!-- #product-<?php the_ID(); ?> -->
+
+</div>

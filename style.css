@@ -961,28 +961,5 @@ a#variations_clear:before {
     height: 1em;
     width: 1em;
     margin-top: -.5em; } }
-.spinner-carrito {
-  position: relative;
-  display: block;
-  width: 150px; }
-
-.spinner-carrito input[type="text"] {
-  position: relative;
-  display: inline-block;
-  width: 80px;
-  margin: 0;
-  padding: 0;
-  float: left; }
-
-.spinner-carrito > .btn {
-  display: inline-block;
-  background-color: brown;
-  width: 20px;
-  height: 34px;
-  margin: 0;
-  padding: 0;
-  position: relative;
-  border-radius: 0;
-  float: left; }
 
 /*# sourceMappingURL=style.css.map */

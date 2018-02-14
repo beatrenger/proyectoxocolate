@@ -1,0 +1,29 @@
+.spinner-carrito {
+  position: relative;
+  display: block;
+  width: 150px;
+}
+
+.spinner-carrito input[type="text"]{
+position: relative;
+display:inline-block;
+width:80px;
+margin:0;
+padding:0;
+float:left;
+  border-radius: 0!important;
+
+}
+.spinner-carrito> .btn {
+display: inline-block;
+background-color:#3a281b;
+width:30px;
+height:34px;
+margin:0;
+padding:0;
+position: relative;
+border-radius: 0;
+float:left;
+color:white;
+
+}

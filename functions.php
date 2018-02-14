@@ -1,3 +1,4 @@
+
 <?php
 // add_action('init','ajaxurl'); // add ajaxurl on top of header
 $max = 0;
@@ -18,12 +19,14 @@ function proyectoxocolate_theme_setup() {
         wp_register_style('bar-css', get_template_directory_uri() . '/css/bar-css.css', array(), '1.0', 'all');
         wp_register_script( 'frontpage', get_template_directory_uri() . '/js/frontpage.js', array ( 'jquery' ), 1.1, true);
         wp_register_script( 'menu-bar', get_template_directory_uri() . '/js/menu-bar.js', array ( 'jquery' ), 1.1, true);
+        wp_register_script( 'jquerymobile', get_template_directory_uri() . '/js/jquery.mobile.custom.min.js', array ( 'jquery' ), 1.1, true);
+        wp_register_style('single_product', get_template_directory_uri() . '/css/single_product.css', array(), '1.0', 'all');
          wp_register_script( 'jquerymobile', get_template_directory_uri() . '/js/jquery.mobile.custom.min.js', array ( 'jquery' ), 1.1, true);
 }
 
   function load_theme_styles() {
 
-     wp_enqueue_script( 'javascript', get_template_directory_uri() . '/js/javascript.js', array(), '1.0.0', true );
+    wp_enqueue_script( 'javascript', get_template_directory_uri() . '/js/javascript.js', array(), '1.0.0', true );
     wp_enqueue_style( 'bar-css', get_stylesheet_uri() );
     wp_enqueue_style( 'style', get_stylesheet_uri() );
      wp_enqueue_script( 'jquery' );
@@ -38,7 +41,12 @@ function proyectoxocolate_theme_setup() {
    if (is_home() || is_front_page() ){
              wp_enqueue_style( 'homepage' );  // no brackets needed for one line and no else
               wp_enqueue_script( 'frontpage' );
+   }else {
+     if ( is_product() ) {
+       wp_enqueue_style( 'single_product', get_stylesheet_uri() );
+     }
    }
+
   }
 
 function add_my_stylesheet() {

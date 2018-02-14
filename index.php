@@ -3,7 +3,6 @@
       get_header();
 
 
-    woocommerce_content();
      ?>
 
 
@@ -12,5 +11,5 @@
 
 <?php
 
-  the_content ( get_the_ID () );
+ the_content ( get_the_ID () );
 get_footer(); ?>
