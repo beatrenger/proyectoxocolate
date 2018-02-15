@@ -76,16 +76,27 @@ global $product;
 			</div>
 
 			<div id="product_info" class="col-xs-12 col-md-5">
-						<div class="precio">
-							<span> $<?php
-									 echo $product->get_price();
-								 ?></span>
-						</div>
-<div class="col-xs-12">
-	<div id="cantidad" class="col-xs-6">
+
+	<div class="precio">
+		<span> $<?php
+				 echo $product->get_price();
+			 ?></span>
+	</div>
+	<div class="form-group">
+	<label for="sel1">Select list:</label>
+	<select class="form-control" id="sel1">
+		<option>1</option>
+		<option>2</option>
+		<option>3</option>
+		<option>4</option>
+	</select>
+</div>
+
+	<div class="col-xs-6 cantidad">
 		<span>Cantidad</span>
 	</div>
 	<div class="col-xs-6">
+
 		<div class="input-group-carrito spinner-carrito">
 				<button class="btn btn-brown" type="button"><b>-</b></button>
 				<input type="text" class="form-control" value="0">
@@ -93,7 +104,9 @@ global $product;
 
 	    </div>
 	</div>
-</div>
+	<div class="col-xs-12 sbmit-button">
+			<button type="submit" class="btn btn-px"><b>Agregar al Carrito</b></button>
+	</div>
 
 
 	  </div>

@@ -1,23 +1,47 @@
+.center {
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); }
+
+.center-top {
+  top: 50%;
+  -webkit-transform: translate(0, -50%);
+  -moz-transform: translate(0, -50%);
+  transform: translate(0, -50%); }
+
+.center-left {
+  left: 50%;
+  -webkit-transform: translate(-50%, 0);
+  -moz-transform: translate(-50%, 0);
+  transform: translate(-50%, 0); }
+
 .spinner-carrito {
   position: relative;
   display: block;
   width: 150px;
 }
 
-.spinner-carrito input[type="text"]{
-position: relative;
-display:inline-block;
-width:80px;
-margin:0;
-padding:0;
-float:left;
+.spinner-carrito{
+  width:100%;
+  input[type="text"]{
+  position: relative;
+  display:inline-block;
+  width:70%;
+  margin:0;
+  padding:0;
+  float:left;
   border-radius: 0!important;
+  text-align: center;
+  font-size:bold;
+  }
 
 }
 .spinner-carrito> .btn {
 display: inline-block;
 background-color:#3a281b;
-width:30px;
+width:15%;
 height:34px;
 margin:0;
 padding:0;
@@ -26,4 +50,101 @@ border-radius: 0;
 float:left;
 color:white;
 
+
+&:hover{
+  color:yellow !important;
+}
+}
+
+.cantidad{
+  position: relative;
+  font-size:16px;
+  font-weight: bold;
+  text-align: center;
+  top:6px;
+}
+.sbmit-button{
+  position: relative;
+  display: block;
+  padding-top:30px;
+
+  .btn-px{
+        width:100%;
+        background-color:#644a30;
+        color:white;
+  }
+}
+
+// coursel
+#myCarouselProduct{
+  border-right:1px solid #3a281b;
+  overflow:hidden;
+
+  .carousel-indicators{
+    display: block ;
+  position: relative !important;
+  width: 100% !important;
+  padding: 0 !important;
+  left: 0;
+  margin:0;
+  bottom:0;
+
+    li{
+      position: relative !important;
+      display: inline-block !important;
+      width:100%;
+      height:auto !important;
+      display: inline-block;
+    text-indent: 0;
+    border: none;
+    cursor: pointer;
+    }
+  }
+}
+#product_info{
+
+  .precio{
+    position: relative;
+    display:block;
+    font-size:40px;
+    color:#594530;
+  }
+
+  .spinner {
+  width: 100px;
+  input {
+    text-align: right;
+  }
+}
+
+
+.input-group-btn-vertical {
+      .boton{
+        position: relative;
+        display:inline-block;
+        height:100%;
+        width:20px;
+      }
+
+}
+}
+
+@media screen and (max-width: 766px) {
+  #myCarouselProduct{
+  .carousel-indicators{
+    display:inline-block !important;
+    position: absolute;
+    background-color: #31281B;
+
+      li{
+        height:10px !important;
+        width:10px !important;
+        border: 1px solid white;
+
+        img{
+          display:none;
+        }
+      }
+    }
+  }
 }
