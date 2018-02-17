@@ -44,6 +44,7 @@ function proyectoxocolate_theme_setup() {
    }else {
      if ( is_product() ) {
        wp_enqueue_style( 'single_product', get_stylesheet_uri() );
+       
      }
    }
 

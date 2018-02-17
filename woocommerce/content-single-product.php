@@ -76,21 +76,23 @@ global $product;
 			</div>
 
 			<div id="product_info" class="col-xs-12 col-md-5">
+				<div class="col-xs-12">
+					<div class="precio">
+						<span> $<?php
+								 echo $product->get_price();
+							 ?></span>
+					</div>
+					<div class="form-group">
+					<label for="sel1">Select list:</label>
+					<select class="form-control" id="sel1">
+						<option>1</option>
+						<option>2</option>
+						<option>3</option>
+						<option>4</option>
+					</select>
+				</div>
+				</div>
 
-	<div class="precio">
-		<span> $<?php
-				 echo $product->get_price();
-			 ?></span>
-	</div>
-	<div class="form-group">
-	<label for="sel1">Select list:</label>
-	<select class="form-control" id="sel1">
-		<option>1</option>
-		<option>2</option>
-		<option>3</option>
-		<option>4</option>
-	</select>
-</div>
 
 	<div class="col-xs-6 cantidad">
 		<span>Cantidad</span>
