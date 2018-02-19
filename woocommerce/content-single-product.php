@@ -27,13 +27,22 @@ if ( ! defined( 'ABSPATH' ) ) {
 <?php
 global $product;
 				  $attachment_ids = $product->get_gallery_attachment_ids(); //product gallery
-
-
+					$titulo = $product->get_title(); // titulo
+					$precio =  $product->get_price(); // precio
+					$available_variations = $product->get_variation_attributes(); // atributos
+					$s_description = $product->get_short_description(); // short description
+					$l_description = $product->get_description(); // long descpription
+          $upsells = $product->get_upsell_ids();
 
 ?>
 <div class="container">
 
 	<div class="row">
+		<div class="titulo col-xs-12">
+			<div class="col-xs-12">
+				<?php echo $titulo ?>
+			</div>
+		</div>
 			<div id="myCarouselProduct" class="col-xs-12 col-md-7 carousel slide" data-ride="carousel">
 
 				<div class="col-xs-12 col-sm-10 col-md-10 main-image">
@@ -79,18 +88,34 @@ global $product;
 				<div class="col-xs-12">
 					<div class="precio">
 						<span> $<?php
-								 echo $product->get_price();
+								 echo $precio;
 							 ?></span>
 					</div>
-					<div class="form-group">
-					<label for="sel1">Select list:</label>
-					<select class="form-control" id="sel1">
-						<option>1</option>
-						<option>2</option>
-						<option>3</option>
-						<option>4</option>
-					</select>
-				</div>
+					<?php
+					if($available_variations){
+	 						foreach($available_variations as $variation => $value){
+						?>
+						<div class="form-group">
+						<label for="sel1">Lista de Selecion:</label>
+
+						<select class="form-control" id="<?php echo $variation;?>">
+
+								<?php
+											foreach($value as $v){
+												?>
+												<option value=""> <?php echo $v;?></option>
+												<?php
+											}
+
+							 ?>
+
+						</select>
+					</div>
+						<?php
+						}
+					}
+							 ?>
+
 				</div>
 
 
@@ -107,15 +132,85 @@ global $product;
 	    </div>
 	</div>
 	<div class="col-xs-12 sbmit-button">
-			<button type="submit" class="btn btn-px"><b>Agregar al Carrito</b></button>
+		<?php if($product->is_purchasable( )){
+			?>
+				<button type="submit" class="btn btn-px"><b>Agregar al Carrito</b></button>
+			<?php
+		}else{
+			?>
+				<button type="button" class="btn btn-secondary">Desabilitado</button>
+			<?php
+		} ?>
 	</div>
 
+	<div class="col-xs-12" >
+<div class="short_description">
+		<?php echo $s_description; ?>
+</div>
 
+	</div>
 	  </div>
-			<div class="col-xs-12 col-md-5">
+
+
+	</div>
+
+	<div class="row">
+		<div class="col-xs-12">
+				<div class="titulo">
+					Articulos Sugeridos
+				</div>
+
+
+		</div>
+
+
+	</div>
+
+ <div class="row container-cats">
+ 		<?php
+		// assuming the list of product IDs is are stored in an array called IDs;
+$_pf = new WC_Product_Factory();
+
+		foreach ($upsells as $cat) {
+				$_product = $_pf->get_product($cat);
+			 	$image = wp_get_attachment_url( $_product->get_image_id() );
+		 	?>
+			<div class="col-xs-12 col-sm-6 col-md-4" >
+			  <a href="<?php echo $_product->get_permalink(); ?>">
+
+			<div class="item-category"   style="background-image: url(<?php echo $image?>); background-repeat: no-repeat; background-position: center;
+			-webkit-background-size: cover;
+			-moz-background-size: cover;
+			-o-background-size: cover;
+			background-size: cover;"; >
+
+			<div class="category-title">
+			  <?php echo $_product->get_title(); ?>
+			</div>
+			<div class="hover">
+			    <div class="circle">
+			        <span class="glyphicon glyphicon-plus"></span>
+			    </div>
+			</div>
 			</div>
 
-	</div>
+			</a>
+			 </div>
+		<?php
+		} ?>
+ </div>
+
+ <div class="row">
+ 	 <div class="col-xs-12">
+		 <div class="long_description">
+ 				<?php echo $l_description; ?>
+ 		</div>
+
+ 			</div>
+ 	 </div>
+ </div>
+
+
 
 
 

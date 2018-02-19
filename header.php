@@ -17,7 +17,7 @@
     */
     ?>
   </head>
-  <body>
+  <body >
 
     <div class="loading-page">
         <div class="dots">
