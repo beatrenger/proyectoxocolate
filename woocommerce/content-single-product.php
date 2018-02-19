@@ -29,8 +29,11 @@ global $product;
 				  $attachment_ids = $product->get_gallery_attachment_ids(); //product gallery
 					$titulo = $product->get_title(); // titulo
 					$precio =  $product->get_price(); // precio
-					$available_variations = $product->get_variation_attributes(); // atributos
-					$s_description = $product->get_short_description(); // short description
+
+					if( $product->is_type( 'variable' )){
+						$available_variations = $product->get_variation_attributes(); // atributos
+	}
+					 $s_description = $product->get_short_description(); // short description
 					$l_description = $product->get_description(); // long descpription
           $upsells = $product->get_upsell_ids();
 
@@ -78,7 +81,7 @@ global $product;
 
 						<?php
 						$value++;
-								 }
+					}
 									 ?>
 					 </ol>
 								</div>

@@ -1,4 +1,3 @@
-
 <?php
 // add_action('init','ajaxurl'); // add ajaxurl on top of header
 $max = 0;
