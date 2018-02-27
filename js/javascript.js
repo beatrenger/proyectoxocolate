@@ -13,9 +13,9 @@ window.onload = function(){
 };
 
 // ajax call
-$.post(my_js_data.ajaxurl, { action: 'ajax_call_test',  }, function(output) {
-   console.log(output)
-});
+// $.post(my_js_data.ajaxurl, { action: 'ajax_call_test',  }, function(output) {
+//    console.log(output)
+// });
 
 // increment for product-page
 // Select your input element.

@@ -13,7 +13,7 @@
  * @see 	    https://docs.woocommerce.com/document/template-structure/
  * @author 		WooThemes
  * @package 	WooCommerce/Templates
- * @version     1.6.4
+ * @version     3.0.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -157,9 +157,9 @@ global $product;
 
 	</div>
 
-	<div class="row">
+	<div class="row otrosarticulos">
 		<div class="col-xs-12">
-				<div class="titulo">
+				<div class="titulo sugerido">
 					Articulos Sugeridos
 				</div>
 

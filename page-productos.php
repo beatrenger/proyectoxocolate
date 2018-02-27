@@ -29,7 +29,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 
   <div class="container container-cats">
     <h1 class="page-title"><?php echo get_the_title(); ?></h1>
-
     <div class="row">
 
 <?php
