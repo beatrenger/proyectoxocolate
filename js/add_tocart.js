@@ -4,7 +4,7 @@ jQuery(function($) {
   // ajax call
   $.post(my_js_data.ajaxurl, { action: 'add_to_cart',  }, function(output) {
      console.log(output);
-     cnsole.log('thefuck');
+     console.log('thefuck');
   });
 
 
