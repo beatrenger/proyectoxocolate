@@ -26,7 +26,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <?php
 global $product;
-				  $attachment_ids = $product->get_gallery_attachment_ids(); //product gallery
+				  $attachment_ids = $product->get_gallery_image_ids(); //product gallery
 					$titulo = $product->get_title(); // titulo
 					$precio =  $product->get_price(); // precio
 
