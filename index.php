@@ -12,12 +12,12 @@ get_template_part( 'menu-bar' );
 
 
     <?php
-    // if (is_product()){
-    //     wc_get_template_part( 'content', 'single-product' );
-    // } else {
+    if (is_product()){
+        wc_get_template_part( 'content', 'single-product' );
+    } else {
 
        the_content ( get_the_ID () );
-    // }
+    }
       ?>
     </div>
     </div>
