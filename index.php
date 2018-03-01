@@ -11,7 +11,9 @@ get_template_part( 'menu-bar' );
         <div class="row">
 
 
-    <?php   the_content ( get_the_ID () );  ?>
+    <?php
+     the_content ( get_the_ID () );
+      ?>
     </div>
     </div>
 

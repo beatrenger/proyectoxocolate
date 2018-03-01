@@ -23,6 +23,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
  ?>
+ este es single product
  <div class="container">
 	<?php
 		/**
