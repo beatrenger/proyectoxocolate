@@ -5,7 +5,7 @@
 get_template_part( 'menu-bar' );
 
 ?>
-
+ ESTE ES EL INDEX
  <div class="container">
 
         <div class="row">
