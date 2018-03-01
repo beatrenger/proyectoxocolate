@@ -32,6 +32,8 @@ global $product;
 
 					if( $product->is_type( 'variable' )){
 						$available_variations = $product->get_variation_attributes(); // atributos
+	} else {
+		$available_variations = false;
 	}
 					 $s_description = $product->get_short_description(); // short description
 					$l_description = $product->get_description(); // long descpription
