@@ -46,7 +46,7 @@ function proyectoxocolate_theme_setup() {
        wp_enqueue_style( 'single_product', get_stylesheet_uri() );
          wp_enqueue_script( 'add_tocart' );
 
-          wc_get_template_part( 'content', 'single-product' );
+        
      }
    }
 
