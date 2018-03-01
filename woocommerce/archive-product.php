@@ -33,7 +33,7 @@ $image = wp_get_attachment_url( $thumbnail_id );
 
 
  ?>
-
+este es archive product
 <div class="image-product-category"  style="background-image: url(<?php echo $image?>); background-repeat: no-repeat; background-position: center;
 -webkit-background-size: cover;
 -moz-background-size: cover;
