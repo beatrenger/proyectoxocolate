@@ -46,7 +46,7 @@ function proyectoxocolate_theme_setup() {
        wp_enqueue_style( 'single_product', get_stylesheet_uri() );
          wp_enqueue_script( 'add_tocart' );
 
-        
+
      }
    }
 
@@ -129,17 +129,27 @@ wp_enqueue_script( 'add-to-cart-variation', get_bloginfo( 'url' ). '/wp-content/
 
 
 
-add_action('wp_ajax_ajax_call_test', 'ajax_call_test');
-add_action("wp_ajax_add_to_cart",'add_to_cart');
+add_action('wp_ajax_nopriv_ajax_call_test', 'ajax_call_test');
+add_action("wp_ajax_nopriv_add_to_cart",'add_to_cart');
 
 
 function add_to_cart(){
       var_dump( WC()->cart->add_to_cart( 27, 1 ));
-   die();
+  wp_die();
 }
 
 
 function ajax_call_test() {
    echo "this call actually worked";
-   die();
+   wp_die();
+}
+
+
+add_action( 'wp_ajax_nopriv_add_foobar', 'prefix_ajax_add_foobar' );
+
+function prefix_ajax_add_foobar() {
+    // Handle request then generate response using WP_Ajax_Response
+
+    // Don't forget to stop execution afterward.
+    wp_die();
 }
