@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container ct_footer">
     <div class="col-xs-12">
 
       <?php echo do_shortcode("[hmenu id=2]"); ?>

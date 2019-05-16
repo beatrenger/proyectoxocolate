@@ -130,19 +130,23 @@ wp_enqueue_script( 'add-to-cart-variation', get_bloginfo( 'url' ). '/wp-content/
 
 
 add_action('wp_ajax_nopriv_ajax_call_test', 'ajax_call_test');
+// none logged in users
 add_action("wp_ajax_nopriv_add_to_cart",'add_to_cart');
+// logged in users
+add_action( 'wp_ajax_add_to_cart', 'add_to_cart' );
 
 
 function add_to_cart(){
-      var_dump( WC()->cart->add_to_cart( 27, 1 ));
-  wp_die();
-}
-
-
+    $id = $_POST['product_id'];
+    $product =  $_POST['product_qty'];
+    WC()->cart->add_to_cart( $id, $product);
+      echo " FUNCTION FINALLY WORKED";
+      wp_die();
+    }
 function ajax_call_test() {
    echo "this call actually worked";
    wp_die();
-}
+ }
 
 
 add_action( 'wp_ajax_nopriv_add_foobar', 'prefix_ajax_add_foobar' );

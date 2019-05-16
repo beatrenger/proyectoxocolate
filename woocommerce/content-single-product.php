@@ -24,6 +24,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 <div itemscope itemtype="<?php echo woocommerce_get_product_schema(); ?>" id="product-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 <?php
+
+
+
 global $product;
 				  $attachment_ids = $product->get_gallery_image_ids(); //product gallery
 					$titulo = $product->get_title(); // titulo
@@ -128,9 +131,11 @@ global $product;
 	</div>
 	<div class="col-xs-6">
 
+
+			<input type="hidden" name="product_ID" value="<?php  echo $product->get_id() ?>">
 		<div class="input-group-carrito spinner-carrito">
 				<button class="btn btn-brown" type="button"><b>-</b></button>
-				<input type="text" class="form-control" value="0">
+				<input type="text" name="quantity" class="form-control" value="0">
 	      <button class="btn btn-brown" type="button"><b>+</b></button>
 
 	    </div>
@@ -189,13 +194,12 @@ $_pf = new WC_Product_Factory();
 			background-size: cover;"; >
 
 			<div class="category-title">
-			  <?php echo $_product->get_title(); ?>
+			  <?php echo $_product->get_title();  ?>
 			</div>
 			<div class="hover">
 			    <div class="circle">
 			        <span class="glyphicon glyphicon-plus"></span>
 			    </div>
-			</div>
 			</div>
 
 			</a>
@@ -207,7 +211,8 @@ $_pf = new WC_Product_Factory();
  <div class="row">
  	 <div class="col-xs-12">
 		 <div class="long_description">
- 				<?php echo $l_description; ?>
+ 				<?php echo $l_description;
+				 	?>
  		</div>
 
  			</div>

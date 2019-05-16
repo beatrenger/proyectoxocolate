@@ -14,6 +14,8 @@ $(".topheader").css("height",windowH - 110);
 
         // button controler from top header
         $('.button-menu').on('click',function(){
+
+
         console.log('pressed arrow to animate menu');
         event.preventDefault()
         $('html,body').animate({scrollTop: $('#hmenu_load_1').offset().top }, 1000);
