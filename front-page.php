@@ -41,6 +41,8 @@ $image_bg = get_field('theme_home_page_background_image');
    <div class="content-body">
 
 <div class="grid">
+
+  hollaaaaa
   <div class="content_product">
     <?php
         $product_image = get_field('product_image');
